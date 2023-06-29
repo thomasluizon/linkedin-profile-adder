@@ -10,16 +10,14 @@
 	async function addAllProfiles() {
 		await waitSeconds()
 
-		const buttons = document.querySelectorAll('[aria-label^="Convidar"]')
+		const buttons = document.querySelectorAll('[aria-label^="Invite"]')
 
 		for (const button of buttons) {
 			buttonClick(button)
 
 			await waitSeconds()
 
-			const sendButton = document.querySelector(
-				'[aria-label="Enviar agora"]'
-			)
+			const sendButton = document.querySelector('[aria-label="Send now"]')
 
 			buttonClick(sendButton)
 
@@ -55,7 +53,7 @@
 
 				if (!hasNextPage) break
 			} catch (error) {
-				alert('Você chegou no limite de conexões semanais do linkedin!')
+				alert('You reached the linkedin weekly connections limit')
 				break
 			}
 		}
